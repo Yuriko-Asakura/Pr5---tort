@@ -17,6 +17,9 @@ namespace Tortik
         private int m = 120;
         private int y = 230;
         static int posit = 0;
+
+        static public int PriceV;
+
         public void vab6()
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
@@ -24,7 +27,7 @@ namespace Tortik
             {
                 if (clavisha.Key == ConsoleKey.DownArrow)
                 {
-                    if (posit < 4)
+                    if (posit < 3)
                     {
                         posit++;
                     }
@@ -32,24 +35,13 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  Ванильный - 150");
                 Console.WriteLine("  Шоколадный - 200 ");
                 Console.WriteLine("  Ягодный - 300 ");
@@ -63,21 +55,28 @@ namespace Tortik
             if (posit == 0)
             {
                 Console.WriteLine("Ничего не выбрано из вкуса: " + f);
+                PriceV = f;
             }
             else
             if (posit == 1)
             {
                 Console.WriteLine("Выбран ванильный вкус : " + n);
+                PriceV = n;
+                hi.tort.Vkus = "ванильный вкус";
             }
             else
             if (posit == 2)
             {
+                hi.tort.Vkus = "Шоколадный вкус";
                 Console.WriteLine("Выбран шоколадный вкус : " + b);
+                PriceV = b;
             }
             else
             if (posit == 3)
             {
                 Console.WriteLine("Выбран ягодный вкус: " + c);
+                PriceV = c;
+                hi.tort.Vkus = "ягодный вкус";
             }
         }
         public void vitog()

@@ -16,6 +16,9 @@ namespace Tortik
         private int m = 120;
         private int y = 230;
         static int posit = 0;
+
+        static public int PriceK;
+
         public void vab7()
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
@@ -23,7 +26,7 @@ namespace Tortik
             {
                 if (clavisha.Key == ConsoleKey.DownArrow)
                 {
-                    if (posit < 4)
+                    if (posit < 3)
                     {
                         posit++;
                     }
@@ -31,24 +34,13 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  1 коржик - 150");
                 Console.WriteLine("  2 коржик - 230 ");
                 Console.WriteLine("  3 коржик - 300 ");
@@ -62,21 +54,29 @@ namespace Tortik
             if (posit == 0)
             {
                 Console.WriteLine("Ничего не выбрано из кол-ва коржей: " + f);
+                PriceK = f;
+
             }
             else
             if (posit == 1)
             {
                 Console.WriteLine("Выбран 1 коржик : " + n);
+                PriceK = n;
+                hi.tort.Korgi = "Выбран 1 коржик";
             }
             else
             if (posit == 2)
             {
                 Console.WriteLine("Выбран 2 коржика : " + y);
+                PriceK = y;
+                hi.tort.Korgi = "Выбран 2 коржика";
             }
             else
             if (posit == 3)
             {
                 Console.WriteLine("Выбран 3 коржика: " + c);
+                PriceK = c;
+                hi.tort.Korgi = "Выбран 3 коржика";
             }
         }
         public void kitog()

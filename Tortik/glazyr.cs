@@ -16,6 +16,9 @@ namespace Tortik
         private int m = 120;
         private int y = 230;
         static int posit = 0;
+
+        static public int PriceG;
+
         public void vab8()
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
@@ -31,24 +34,13 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  Шоколадная - 150");
                 Console.WriteLine("  Молочная - 230 ");
                 Console.WriteLine("  Сливочная - 300 ");
@@ -62,27 +54,37 @@ namespace Tortik
         {
             if (posit == 0)
             {
-                Console.WriteLine("Ничего не выбрано из кол-ва коржей: " + f);
+                Console.WriteLine("Ничего не выбрано из глазури: " + f);
+                PriceG = f;
+                hi.tort.Glazur = "Ничего не выбрано из глазури";
             }
             else
             if (posit == 1)
             {
                 Console.WriteLine("Выбрана шоколадная глазурь : " + n);
+                PriceG = n;
+                hi.tort.Glazur = "Выбрана шоколадная глазурь";
             }
             else
             if (posit == 2)
             {
                 Console.WriteLine("Выбрана молочная глазурь : " + y);
+                PriceG = y;
+                hi.tort.Glazur = "Выбрана молочная глазурь";
             }
             else
             if (posit == 3)
             {
                 Console.WriteLine("Выбрана сливочная глазурь: " + c);
+                PriceG = c;
+                hi.tort.Glazur = "Выбрана сливочная глазурь";
             }
             else
             if (posit == 3)
             {
                 Console.WriteLine("Выбрана сметанная глазурь: " + b);
+                PriceG = b;
+                hi.tort.Glazur = "Выбрана сметанная глазурь";
             }
         }
         public void gitog()

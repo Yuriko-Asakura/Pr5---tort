@@ -11,16 +11,17 @@ namespace Tortik
     internal class hi
     {
         static int posit = 5;
-       
+        public static int FinalCena = pod.PriceF + Razmer.PriceR + vkys.PriceV + korgi.PriceK;
+        public static Tort tort = new Tort();
         static void Main()
         {
-            
+            FinalCena = pod.PriceF + Razmer.PriceR + vkys.PriceV + korgi.PriceK + glazyr.PriceG + decor.PriceD;
             ConsoleKeyInfo clavisha = Console.ReadKey();
             while (clavisha.Key != ConsoleKey.Enter)
             {
                 if (clavisha.Key == ConsoleKey.DownArrow)
                 {
-                    if (posit < 10)
+                    if (posit < 12)
                     {
                         posit++;
                     }
@@ -36,7 +37,8 @@ namespace Tortik
                 Console.Clear();
                 Console.WriteLine("Добро пожпловать в конструктов тортов!" +
                       "\nДля того что бы выберить пункт используйте стрелки вверх и вниз.\n" +
-                       "Что бы зайти в пункт нажмите энтер, что бы вернуться нажмите на клавишу s");
+                      "ВАЖНО: что бы увидеть итоговую сумму нажмите два раза на -посмотреть итог-" +
+                       "\nЧто бы зайти в пункт нажмите энтер, что бы завершить программу нажмите снача на эскейп, потом на энтер, ");
                 Console.WriteLine("Выберите один из пунктов");
                 Console.WriteLine("  Форма");
                 Console.WriteLine("  Размер");
@@ -45,6 +47,7 @@ namespace Tortik
                 Console.WriteLine("  Глазурь");
                 Console.WriteLine("  Декор");
                 Console.WriteLine("  Я закончил :3 ");
+                Console.WriteLine("  Посмотреть итог:");
                 Console.WriteLine("--------");
                 Razmer Razmer = new Razmer();
                 Razmer.itog();
@@ -63,28 +66,25 @@ namespace Tortik
                 clavisha = Console.ReadKey();
             }
             gag();
+
         }
         static void gag()
+
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
-            if (posit == 10)
+            if (posit == 12)
             {
                 Console.Clear();
-                Console.WriteLine("Вы вышли из программы!\n Ваш заказ:");
-                Razmer Razmer = new Razmer();
-                Razmer.itog();
-                pod pod = new pod();
-                pod.yitog();
-                vkys vkys = new vkys();
-                vkys.vitog();
-                korgi korgi = new korgi();
-                korgi.kitog();
-                glazyr glazyr = new glazyr();
-                glazyr.gitog();
-                decor decor = new decor();
-                decor.ditog();
+                Console.WriteLine("Итог:" + FinalCena);
+                Main();
             }
-            if (posit == 4)
+            else
+            if (posit == 11)
+            {
+                povtor();
+            }
+            else
+            if (posit == 5)
             {
                 Console.Clear();
                 pod pod = new pod();
@@ -94,14 +94,9 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
             else
-            if (posit == 5)
+            if (posit == 6)
             {
                 Console.Clear();
                 Razmer Razmer = new Razmer();
@@ -111,14 +106,9 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
             else
-            if (posit == 6)
+            if (posit == 7)
             {
                 Console.Clear();
                 vkys vkys = new vkys();
@@ -128,14 +118,9 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
             else
-            if (posit == 7)
+            if (posit == 8)
             {
                 Console.Clear();
                 korgi korgi = new korgi();
@@ -145,14 +130,9 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
             else
-            if (posit == 8)
+            if (posit == 9)
             {
                 Console.Clear();
                 glazyr glazyr = new glazyr();
@@ -162,14 +142,9 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
             else
-            if (posit == 9)
+            if (posit == 10)
             {
                 Console.Clear();
                 decor decor = new decor();
@@ -179,12 +154,29 @@ namespace Tortik
                     Console.Clear();
                     Main();
                 }
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    Main();
-                }
             }
+        }
+        private static void povtor()
+        {
+            Console.Clear();
+            Razmer Razmer = new Razmer();
+            Razmer.itog();
+            pod pod = new pod();
+            pod.yitog();
+            vkys vkys = new vkys();
+            vkys.vitog();
+            korgi korgi = new korgi();
+            korgi.kitog();
+            glazyr glazyr = new glazyr();
+            glazyr.gitog();
+            decor decor = new decor();
+            decor.ditog();
+            DateTime dateTime = DateTime.Now;
+            Console.WriteLine("Время заказа: " + dateTime);
+            Console.WriteLine("Итог:" + FinalCena);
+            File.AppendAllText("C:\\Users\\Анастасия\\История заказов.txt", $"{"==========="}\n{tort.Forma}\n{tort.Razmer}\n{tort.Vkus}\n{tort.Korgi}\n{tort.Glazur}\n{tort.Decor}\n{dateTime}\n{FinalCena}\n{"==========="}");
         }
     }
 }
+        
+

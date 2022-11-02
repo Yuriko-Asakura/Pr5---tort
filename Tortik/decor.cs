@@ -17,7 +17,10 @@ namespace Tortik
         private int y = 230;
         private int w = 530;
         static int posit = 0;
-        public void vab9()
+
+        static public int PriceD;
+
+        public void vab9() 
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
             while (clavisha.Key != ConsoleKey.Enter)
@@ -32,24 +35,13 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  Весенний - 230");
                 Console.WriteLine("  Зимний - 230 ");
                 Console.WriteLine("  Летний - 300 ");
@@ -66,36 +58,50 @@ namespace Tortik
             if (posit == 0)
             {
                 Console.WriteLine("Ничего не выбрано из декора: " + f);
+                PriceD = f;
+                hi.tort.Decor = "Ничего не выбрано из декора";
             }
             else
             if (posit == 1)
             {
-                Console.WriteLine("Выбран весенний декора : " + y);
+                Console.WriteLine("Выбран весенний декор : " + y);
+                PriceD = y;
+                hi.tort.Decor = "Выбран весенний декор";
             }
             else
             if (posit == 2)
             {
-                Console.WriteLine("Выбран зимний декора: " + y);
+                Console.WriteLine("Выбран зимний декор: " + y);
+                PriceD = y;
+                hi.tort.Decor = "Выбран зимний декор";
             }
             else
             if (posit == 3)
             {
-                Console.WriteLine("Выбран летний декора: " + c);
+                Console.WriteLine("Выбран летний декор: " + c);
+                PriceD = c;
+                hi.tort.Decor = "Выбран летний декор";
             }
             else
             if (posit == 4)
             {
-                Console.WriteLine("Выбран осеннтй декора: " + n);
+                Console.WriteLine("Выбран осенний декор: " + n);
+                PriceD = n;
+                hi.tort.Decor = "Выбран осенний декор";
             }
             else
             if (posit == 5)
             {
                 Console.WriteLine("Выбран анимешный декора: " + c);
+                PriceD = c;
+                hi.tort.Decor = "Выбран анимешный декор";
             }
             else
             if (posit == 6)
             {
                 Console.WriteLine("Выбран мультяшный декора: " + w);
+                PriceD = w;
+                hi.tort.Decor = "Выбран мультяшный декор";
             }
         }
         public void ditog()

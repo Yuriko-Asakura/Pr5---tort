@@ -17,6 +17,9 @@ namespace Tortik
         private int m = 120;
         private int y = 230;
         static int posit = 0;
+
+        public static int PriceR;
+
         public void vab5()
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
@@ -24,7 +27,7 @@ namespace Tortik
             {
                 if (clavisha.Key == ConsoleKey.DownArrow)
                 {
-                    if (posit < 4)
+                    if (posit < 3)
                     {
                         posit++;
                     }
@@ -32,24 +35,13 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    Console.Clear();
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  Маленький - 100");
                 Console.WriteLine("  Средний - 200 ");
                 Console.WriteLine("  Большой - 300 ");
@@ -63,20 +55,27 @@ namespace Tortik
             if (posit == 0)
             {
                 Console.WriteLine("Ничего не выбрано из размера: " + f);
+                PriceR = f;
             }
             else
             if (posit == 1)
             {
+                PriceR = a;
+                hi.tort.Razmer = "Маленький";
                 Console.WriteLine("Выбрпн маленький размер: " + a);
             }
             else
             if (posit == 2)
             {
+                PriceR = b;
+                hi.tort.Razmer = "Средний";
                 Console.WriteLine("Выбран средний размер: " + b);
             }
             else
             if (posit == 3)
             {
+                PriceR = c;
+                hi.tort.Razmer = "Большой";
                 Console.WriteLine("Выбран большой размер: " + c);
             }
         }

@@ -4,6 +4,9 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace Tortik
 {
+    /// <summary>
+    /// Форма торта
+    /// </summary>
     internal class pod
     {
         private int f = 0;
@@ -13,15 +16,18 @@ namespace Tortik
         private int n = 150;
         private int m = 120;
         private int y = 230;
+
+        public static int PriceF;
+
         static int posit = 0;
         public void vab4()
         {
             ConsoleKeyInfo clavisha = Console.ReadKey();
-            while (true)
+            while (clavisha.Key != ConsoleKey.Enter)
             {
                 if (clavisha.Key == ConsoleKey.DownArrow)
                 {
-                    if (posit < 2)
+                    if (posit < 3)
                     {
                         posit++;
                     }
@@ -29,25 +35,17 @@ namespace Tortik
                 else
                 if (clavisha.Key == ConsoleKey.UpArrow)
                 {
-                    if (posit > 1)
+                    if (posit > 0)
                     {
                         posit--;
                     }
                 }
-                else
-                if (clavisha.Key == ConsoleKey.Enter)
-                {
-                    return;
-                }
-                else
-                if (clavisha.Key == ConsoleKey.S)
-                {
-                    break;
-                }
+                
                 Console.Clear();
-                Console.WriteLine("Пункты:");
+                Console.WriteLine("  Вернуться в главное меню:");
                 Console.WriteLine("  Круг - 100");
                 Console.WriteLine("  Квадрат - 200 ");
+                Console.WriteLine("  Треугольник - 230 ");
                 Console.SetCursorPosition(0, posit);
                 Console.WriteLine("->");
                 clavisha = Console.ReadKey();
@@ -55,19 +53,29 @@ namespace Tortik
         }
         public void summa4()
         {
-            if (posit == 0)
-            {
-                Console.WriteLine("Ничего не выбрано из формы: " + f);
-            }
-            else if (posit == 1)
-            {
-                Console.WriteLine("Выбрана форма круг: " + a);
-            }
-            else if (posit == 2)
-            {
-                Console.WriteLine("Выбрана форма квадрат: " + b);
-            }
-
+                if (posit == 0)
+                {
+                    Console.WriteLine("Ничего не выбрано из формы: " + f);
+                    PriceF = f;
+                }
+                else if (posit == 1)
+                {
+                    Console.WriteLine("Выбрана форма круг: " + a);
+                    hi.tort.Forma = "Форма круг";
+                    PriceF = a;
+                }
+                else if (posit == 2)
+                {
+                    Console.WriteLine("Выбрана форма квадрат: " + b);
+                    hi.tort.Forma = "Форма квадрат";
+                    PriceF = b;
+                }
+                else if (posit == 3)
+                {
+                    Console.WriteLine("Выбрана форма треугольник: " + y);
+                    hi.tort.Forma = "Форма треугольник";
+                    PriceF = y;
+                }
         }
         public void yitog()
         {

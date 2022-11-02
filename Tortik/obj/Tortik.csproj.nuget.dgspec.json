@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Татьяна\\source\\repos\\Tortik\\Tortik\\Tortik.csproj": {}
+    "C:\\Users\\Анастасия\\source\\repos\\Tortik\\Tortik\\Tortik.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Татьяна\\source\\repos\\Tortik\\Tortik\\Tortik.csproj": {
+    "C:\\Users\\Анастасия\\source\\repos\\Tortik\\Tortik\\Tortik.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Татьяна\\source\\repos\\Tortik\\Tortik\\Tortik.csproj",
+        "projectUniqueName": "C:\\Users\\Анастасия\\source\\repos\\Tortik\\Tortik\\Tortik.csproj",
         "projectName": "Tortik",
-        "projectPath": "C:\\Users\\Татьяна\\source\\repos\\Tortik\\Tortik\\Tortik.csproj",
-        "packagesPath": "C:\\Users\\Татьяна\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Татьяна\\source\\repos\\Tortik\\Tortik\\obj\\",
+        "projectPath": "C:\\Users\\Анастасия\\source\\repos\\Tortik\\Tortik\\Tortik.csproj",
+        "packagesPath": "C:\\Users\\Анастасия\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Анастасия\\source\\repos\\Tortik\\Tortik\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Татьяна\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Анастасия\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
